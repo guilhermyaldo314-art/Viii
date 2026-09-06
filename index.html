@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Uma perguntinha ❤️</title>
 
     <style>
@@ -18,66 +19,127 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: linear-gradient(145deg, #ffdce8, #f7c7d8, #ead7ff);
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffdce8,
+                    #f7c7d8,
+                    #ead7ff
+                );
+
             overflow: hidden;
             color: #4a2635;
         }
 
+        /* Corações flutuando */
+
         .coracao {
             position: fixed;
-            font-size: 22px;
+            bottom: -40px;
+            font-size: 24px;
             opacity: 0.35;
-            animation: flutuar 6s linear infinite;
             pointer-events: none;
+
+            animation:
+                subir 7s linear infinite;
         }
 
-        .c1 { left: 10%; animation-delay: 0s; }
-        .c2 { left: 25%; animation-delay: 2s; }
-        .c3 { left: 70%; animation-delay: 1s; }
-        .c4 { left: 88%; animation-delay: 3s; }
+        .c1 {
+            left: 8%;
+            animation-delay: 0s;
+        }
 
-        @keyframes flutuar {
+        .c2 {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .c3 {
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+        .c4 {
+            left: 88%;
+            animation-delay: 3s;
+        }
+
+        @keyframes subir {
+
             0% {
-                transform: translateY(110vh) rotate(0deg);
+                transform:
+                    translateY(0)
+                    rotate(0deg);
             }
 
             100% {
-                transform: translateY(-20vh) rotate(360deg);
+                transform:
+                    translateY(-115vh)
+                    rotate(360deg);
             }
         }
+
+        /* Cartão */
 
         .card {
             width: 100%;
             max-width: 390px;
-            background: rgba(255, 255, 255, 0.88);
+
             padding: 35px 25px;
-            border-radius: 28px;
+
             text-align: center;
-            box-shadow: 0 15px 45px rgba(100, 50, 80, 0.18);
+
+            background:
+                rgba(255, 255, 255, 0.90);
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 18px 50px
+                rgba(100, 50, 80, 0.20);
+
             backdrop-filter: blur(10px);
-            animation: aparecer 0.8s ease;
+
+            animation:
+                aparecer 0.8s ease;
         }
 
         @keyframes aparecer {
+
             from {
                 opacity: 0;
-                transform: translateY(25px) scale(0.95);
+                transform:
+                    translateY(25px)
+                    scale(0.95);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+                transform:
+                    translateY(0)
+                    scale(1);
             }
         }
 
+        /* Coração principal */
+
         .emoji {
-            font-size: 55px;
-            margin-bottom: 15px;
-            animation: bater 1.5s infinite;
+            font-size: 58px;
+            margin-bottom: 12px;
+
+            animation:
+                bater 1.5s infinite;
         }
 
         @keyframes bater {
+
             0%, 100% {
                 transform: scale(1);
             }
@@ -98,6 +160,8 @@
             margin-bottom: 28px;
         }
 
+        /* Botões */
+
         .botoes {
             display: flex;
             flex-direction: column;
@@ -105,23 +169,40 @@
         }
 
         button {
+            width: 100%;
+
             border: none;
+
             padding: 15px;
+
             border-radius: 18px;
+
+            font-family: inherit;
             font-size: 16px;
             font-weight: 600;
+
             cursor: pointer;
-            transition: 0.2s;
-            font-family: inherit;
+
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
         }
 
         button:active {
             transform: scale(0.95);
         }
 
+        button:hover {
+            transform: translateY(-2px);
+        }
+
         .sim {
             background: #ff6f9c;
             color: white;
+
+            box-shadow:
+                0 7px 18px
+                rgba(255, 111, 156, 0.30);
         }
 
         .talvez {
@@ -134,164 +215,334 @@
             color: #6b5c61;
         }
 
-        button:hover {
-            transform: translateY(-2px);
-        }
+        /* Resposta */
 
         #resposta {
             display: none;
+
             margin-top: 25px;
+
             padding: 20px;
+
             border-radius: 20px;
+
             background: #fff0f5;
+
             font-size: 17px;
             line-height: 1.5;
-            animation: aparecer 0.5s ease;
+
+            animation:
+                aparecer 0.5s ease;
         }
 
         .voltar {
-            margin-top: 15px;
-            background: transparent;
-            color: #9b6478;
-            font-size: 14px;
             display: none;
+
+            margin-top: 15px;
+
+            background: transparent;
+
+            color: #9b6478;
+
+            font-size: 14px;
+        }
+
+        /* Pequena assinatura */
+
+        .assinatura {
+            margin-top: 22px;
+
+            font-size: 12px;
+
+            color: #9b7885;
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Corações -->
+
     <div class="coracao c1">❤️</div>
     <div class="coracao c2">💗</div>
     <div class="coracao c3">💕</div>
     <div class="coracao c4">💖</div>
 
+
     <main class="card">
 
-        <div class="emoji">🥹❤️</div>
+        <!-- Coração principal -->
 
-        <h1>Uma perguntinha hipotética...</h1>
+        <div class="emoji">
+            🥹❤️
+        </div>
+
+
+        <!-- Título -->
+
+        <h1>
+            Uma perguntinha hipotética...
+        </h1>
+
+
+        <!-- Pergunta -->
 
         <p class="pergunta">
-            Se eu estivesse aí agora, bem do seu ladinho,
+
+            Se eu estivesse aí agora,
+            bem do seu ladinho,
             e te pedisse em namoro...
+
             <br><br>
-            o que você me responderia? 👀
+
+            o que você me responderia? 👀❤️
+
         </p>
 
-        <div class="botoes" id="botoes">
 
-            <button class="sim" onclick="responder('sim')">
+        <!-- Botões -->
+
+        <div
+            class="botoes"
+            id="botoes"
+        >
+
+            <button
+                class="sim"
+                onclick="responder('sim')"
+            >
                 Sim ❤️
             </button>
 
-            <button class="talvez" onclick="responder('talvez')">
+
+            <button
+                class="talvez"
+                onclick="responder('talvez')"
+            >
                 Talvez... 👀
             </button>
 
-            <button class="nao" onclick="responder('nao')">
+
+            <button
+                class="nao"
+                onclick="responder('nao')"
+            >
                 Não 😭
             </button>
 
         </div>
 
+
+        <!-- Resposta -->
+
         <div id="resposta"></div>
 
-        <button class="voltar" id="voltar" onclick="voltar()">
+
+        <!-- Voltar -->
+
+        <button
+            class="voltar"
+            id="voltar"
+            onclick="voltar()"
+        >
             ← Quero escolher de novo
         </button>
 
+
+        <div class="assinatura">
+            Feito com carinho ❤️
+        </div>
+
     </main>
+
 
     <script>
 
+        /*
+        ==========================================
+        CONFIGURAÇÃO DO WHATSAPP
+        ==========================================
+        */
+
+        const meuWhatsApp = "5565996921583";
+
+
+        /*
+        ==========================================
+        FUNÇÃO DOS BOTÕES
+        ==========================================
+        */
+
         function responder(opcao) {
 
-            const resposta = document.getElementById("resposta");
-            const botoes = document.getElementById("botoes");
-            const voltar = document.getElementById("voltar");
+            let mensagem = "";
 
-            botoes.style.display = "none";
-            resposta.style.display = "block";
-            voltar.style.display = "inline-block";
+
+            /*
+            SIM
+            */
 
             if (opcao === "sim") {
 
-                resposta.innerHTML = `
-                    <strong>EU SABIAAA 😭❤️</strong>
-                    <br><br>
-                    Então vem cá, minha xuxuzinha 🥹💕
-                `;
+                mensagem =
+`Vitória respondeu: SIM ❤️🥹
 
-                confetes();
+Então vem cá, minha xuxuzinha 😭💕`;
 
-            } else if (opcao === "talvez") {
-
-                resposta.innerHTML = `
-                    <strong>Hmmm... 👀</strong>
-                    <br><br>
-                    Então eu ainda tenho uma chance? 🥹❤️
-                `;
-
-            } else {
-
-                resposta.innerHTML = `
-                    <strong>Tá bom... 😭</strong>
-                    <br><br>
-                    Eu aceito... mas essa resposta
-                    doeu um pouquinho KKKKKK 🥲❤️
-                `;
             }
+
+
+            /*
+            TALVEZ
+            */
+
+            if (opcao === "talvez") {
+
+                mensagem =
+`Vitória respondeu: TALVEZ 👀❤️
+
+Então eu ainda tenho uma chance? 🥹`;
+
+            }
+
+
+            /*
+            NÃO
+            */
+
+            if (opcao === "nao") {
+
+                mensagem =
+`Vitória respondeu: NÃO 😭
+
+Tá bom... eu aceito 🥲❤️`;
+
+            }
+
+
+            /*
+            Abre o WhatsApp
+            */
+
+            const link =
+                `https://wa.me/${meuWhatsApp}?text=${
+                    encodeURIComponent(mensagem)
+                }`;
+
+
+            window.location.href = link;
+
         }
+
+
+        /*
+        ==========================================
+        BOTÃO VOLTAR
+        ==========================================
+        */
 
         function voltar() {
 
-            document.getElementById("botoes").style.display = "flex";
-            document.getElementById("resposta").style.display = "none";
-            document.getElementById("voltar").style.display = "none";
+            document.getElementById("botoes")
+                .style.display = "flex";
+
+            document.getElementById("resposta")
+                .style.display = "none";
+
+            document.getElementById("voltar")
+                .style.display = "none";
+
         }
+
+
+        /*
+        ==========================================
+        CONFETES DE CORAÇÃO
+        ==========================================
+        */
 
         function confetes() {
 
-            for (let i = 0; i < 25; i++) {
+            for (let i = 0; i < 30; i++) {
 
-                const coracao = document.createElement("div");
+                const coracao =
+                    document.createElement("div");
 
-                coracao.innerHTML = ["❤️", "💕", "💖", "💗"][Math.floor(Math.random() * 4)];
 
-                coracao.style.position = "fixed";
-                coracao.style.left = Math.random() * 100 + "vw";
-                coracao.style.top = "-30px";
-                coracao.style.fontSize = (15 + Math.random() * 20) + "px";
-                coracao.style.zIndex = "9999";
-                coracao.style.pointerEvents = "none";
+                coracao.innerHTML =
+                    ["❤️", "💕", "💖", "💗", "🥹"]
+                    [
+                        Math.floor(
+                            Math.random() * 5
+                        )
+                    ];
 
-                document.body.appendChild(coracao);
 
-                const duracao = 2000 + Math.random() * 2000;
+                coracao.style.position =
+                    "fixed";
+
+                coracao.style.left =
+                    Math.random() * 100 + "vw";
+
+                coracao.style.top =
+                    "-30px";
+
+                coracao.style.fontSize =
+                    (15 + Math.random() * 20) + "px";
+
+                coracao.style.zIndex =
+                    "9999";
+
+                coracao.style.pointerEvents =
+                    "none";
+
+
+                document.body.appendChild(
+                    coracao
+                );
+
+
+                const duracao =
+                    2000 +
+                    Math.random() * 2000;
+
 
                 coracao.animate(
+
                     [
                         {
-                            transform: "translateY(0) rotate(0deg)",
+                            transform:
+                                "translateY(0) rotate(0deg)",
+
                             opacity: 1
                         },
+
                         {
-                            transform: `translateY(110vh) rotate(${Math.random() * 720}deg)`,
+                            transform:
+                                `translateY(110vh) rotate(${
+                                    Math.random() * 720
+                                }deg)`,
+
                             opacity: 0
                         }
                     ],
+
                     {
                         duration: duracao,
                         easing: "ease-in",
                         fill: "forwards"
                     }
+
                 );
 
-                setTimeout(() => {
-                    coracao.remove();
-                }, duracao);
+
+                setTimeout(
+                    () => coracao.remove(),
+                    duracao
+                );
+
             }
+
         }
 
     </script>
